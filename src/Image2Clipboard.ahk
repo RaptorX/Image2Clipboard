@@ -5,6 +5,24 @@
 #SingleInstance,Force
 #Include <Notify>
 #Include <Gdip_All>
+#Include <ScriptObj/ScriptObj>
+
+global script := {base         : script
+                 ,name          : regexreplace(A_ScriptName, "\.\w+")
+                 ,version      : "0.1.0"
+                 ,author       : "Joe Glines"
+                 ,email        : "joe.glines@the-automator.com"
+                 ,crtdate      : ""
+                 ,moddate      : "July 25, 2022"
+                 ,homepagetext : ""
+                 ,homepagelink : ""
+                 ,donateLink   : "https://www.paypal.com/donate?hosted_button_id=MBT5HSD9G94N6"
+                 ,resfolder    : A_ScriptDir "\res"
+                 ,iconfile     : A_ScriptDir "\res\sct.ico"
+                 ,configfile   : A_ScriptDir "\settings.ini"
+                 ,configfolder : A_ScriptDir ""}
+
+; script.Update()
 
 Browser_Forward::Reload
 Browser_Back::
