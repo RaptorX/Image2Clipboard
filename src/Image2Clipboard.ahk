@@ -8,11 +8,11 @@
 #Include <ScriptObj/ScriptObj>
 
 global script := {base         : script
-                 ,name          : regexreplace(A_ScriptName, "\.\w+")
+                 ,name         : regexreplace(A_ScriptName, "\.\w+")
                  ,version      : "0.1.0"
                  ,author       : "Joe Glines"
                  ,email        : "joe.glines@the-automator.com"
-                 ,crtdate      : ""
+                 ,crtdate      : "July 25, 2022"
                  ,moddate      : "July 25, 2022"
                  ,homepagetext : ""
                  ,homepagelink : ""
@@ -21,6 +21,12 @@ global script := {base         : script
                  ,iconfile     : A_ScriptDir "\res\sct.ico"
                  ,configfile   : A_ScriptDir "\settings.ini"
                  ,configfolder : A_ScriptDir ""}
+
+try script.Update("https://raw.githubusercontent.com/RaptorX/Image2Clipboard/master/ver"
+                 ,"https://github.com/RaptorX/Image2Clipboard/releases/download/latest/Image2Clipboard.zip")
+Catch err
+	if err.code != 6 ; latest version
+		MsgBox, % err.msg
 
 IniRead, hk, % "settings.ini", % "Hotkeys", % "main", % "Browser_Back"
 Hotkey, %hk%, % "Image_to_Clipboard"
@@ -32,10 +38,10 @@ Image_to_Clipboard(){
 
 	FileSelectFile, File_Path
 	if !File_Path
-{
-	MsgBox, No File selected
-	return
-}
+	{
+		MsgBox, No File selected
+		return
+	}
 	pToken	:= Gdip_Startup()
 	pBitmap	:= Gdip_CreateBitmapFromFile(File_Path)
 	hBitmap	:= Gdip_CreateHBITMAPFromBitmap(pBitmap)
@@ -51,10 +57,10 @@ Image_to_Clipboard(){
 	Sleep, 2000
 	ToolTip
 	}
-;   If (Display_Notification=1)
-;     Notify("Image on Clipboard",%clipboard%,5,"TS=14 TM=12 GC_=Yellow SI_=500"  ) ;SI=speed In- smaller is faster
-;   If (Display_Notification=2)
-;     Notify("Image on Clipboard",%clipboard%,5,"TS=14 TM=12 GC_=Yellow SI_=500  WP=" File_Path ) ;SI=speed In- smaller is faster
+	;   If (Display_Notification=1)
+	;     Notify("Image on Clipboard",%clipboard%,5,"TS=14 TM=12 GC_=Yellow SI_=500"  ) ;SI=speed In- smaller is faster
+	;   If (Display_Notification=2)
+	;     Notify("Image on Clipboard",%clipboard%,5,"TS=14 TM=12 GC_=Yellow SI_=500  WP=" File_Path ) ;SI=speed In- smaller is faster
 }
 Return
 
