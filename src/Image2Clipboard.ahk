@@ -9,7 +9,7 @@
 
 global script := {base         : script
                  ,name         : regexreplace(A_ScriptName, "\.\w+")
-                 ,version      : "0.1.0"
+                 ,version      : "0.3.0"
                  ,author       : "Joe Glines"
                  ,email        : "joe.glines@the-automator.com"
                  ,crtdate      : "July 25, 2022"
