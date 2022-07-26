@@ -22,21 +22,20 @@ global script := {base         : script
                  ,configfile   : A_ScriptDir "\settings.ini"
                  ,configfolder : A_ScriptDir ""}
 
-; script.Update()
+IniRead, hk, % "settings.ini", % "Hotkeys", % "main", % "Browser_Back"
+Hotkey, %hk%, % "Image_to_Clipboard"
+return
 
 Browser_Forward::Reload
-Browser_Back::
-FileSelectFile, File
-if !File
+
+Image_to_Clipboard(){
+
+	FileSelectFile, File_Path
+	if !File_Path
 {
 	MsgBox, No File selected
 	return
 }
-Image_to_Clipboard(File,0)
-return
-
-
-Image_to_Clipboard(File_Path,notification_type:=0){
 	pToken	:= Gdip_Startup()
 	pBitmap	:= Gdip_CreateBitmapFromFile(File_Path)
 	hBitmap	:= Gdip_CreateHBITMAPFromBitmap(pBitmap)
