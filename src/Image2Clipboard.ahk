@@ -1,7 +1,13 @@
-;*******************************************************
-; Want a clear path for learning AutoHotkey; Take a look at our AutoHotkey Udemy courses.  They're structured in a way to make learning AHK EASY
+#Requires Autohotkey v1.1.33+
+;--
+;@Ahk2Exe-SetVersion     0.3.0
+;@Ahk2Exe-SetProductName Image2Clipboard
+;@Ahk2Exe-SetDescription Allows you to select an image and load it to the clipboard
+;*******************************************************************************
+; Want a clear path for learning AutoHotkey; Take a look at our AutoHotkey Udemy courses. 
+; They're structured in a way to make learning AHK EASY.
 ; Right now you can  get a coupon code here: https://the-Automator.com/Learn
-;*******************************************************
+;*******************************************************************************
 #SingleInstance,Force
 #Include <Notify>
 #Include <Gdip_All>
