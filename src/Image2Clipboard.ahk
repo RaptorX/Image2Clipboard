@@ -1,6 +1,7 @@
 #Requires Autohotkey v1.1.33+
 ;--
 ;@Ahk2Exe-SetVersion     0.3.0
+;@Ahk2Exe-SetMainIcon    res\main.ico
 ;@Ahk2Exe-SetProductName Image2Clipboard
 ;@Ahk2Exe-SetDescription Allows you to select an image and load it to the clipboard
 ;*******************************************************************************
@@ -24,7 +25,7 @@ global script := {base         : script
                  ,homepagelink : ""
                  ,donateLink   : "https://www.paypal.com/donate?hosted_button_id=MBT5HSD9G94N6"
                  ,resfolder    : A_ScriptDir "\res"
-                 ,iconfile     : A_ScriptDir "\res\sct.ico"
+                 ,iconfile     : A_ScriptDir "\res\main.ico"
                  ,configfile   : A_ScriptDir "\settings.ini"
                  ,configfolder : A_ScriptDir ""}
 
