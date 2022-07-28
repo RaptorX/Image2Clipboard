@@ -29,6 +29,8 @@ global script := {base         : script
                  ,configfile   : A_ScriptDir "\settings.ini"
                  ,configfolder : A_ScriptDir ""}
 
+script.GetLicense()
+
 try script.Update("https://raw.githubusercontent.com/RaptorX/Image2Clipboard/master/ver"
                  ,"https://github.com/RaptorX/Image2Clipboard/releases/download/latest/Image2Clipboard.zip")
 Catch err
