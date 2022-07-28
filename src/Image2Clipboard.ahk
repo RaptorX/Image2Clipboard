@@ -12,6 +12,7 @@
 #SingleInstance,Force
 #Include <Notify>
 #Include <Gdip_All>
+#Include <ScriptObject\ScriptObject>
 
 global script := {base         : script
                  ,name         : regexreplace(A_ScriptName, "\.\w+")
