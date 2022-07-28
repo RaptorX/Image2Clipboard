@@ -1,6 +1,6 @@
 #Requires Autohotkey v1.1.33+
 ;--
-;@Ahk2Exe-SetVersion     0.2.0
+;@Ahk2Exe-SetVersion     0.3.0
 ;@Ahk2Exe-SetMainIcon    res\main.ico
 ;@Ahk2Exe-SetProductName Image2Clipboard
 ;@Ahk2Exe-SetDescription Allows you to select an image and load it to the clipboard
@@ -16,7 +16,7 @@
 
 global script := {base         : script
                  ,name         : regexreplace(A_ScriptName, "\.\w+")
-                 ,version      : "0.2.0"
+                 ,version      : "0.3.0"
                  ,author       : "Joe Glines"
                  ,email        : "joe.glines@the-automator.com"
                  ,crtdate      : "July 25, 2022"
